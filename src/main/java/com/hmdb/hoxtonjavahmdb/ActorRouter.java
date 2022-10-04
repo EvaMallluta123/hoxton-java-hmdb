@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -31,5 +33,8 @@ public class ActorRouter {
   public ArrayList<Movie> getAllMovies() {
     return Movie.movies;
   }
-
+  @PostMapping("/movies")
+  public Movie createCat(@RequestBody Movie movie) {
+    return movie;
+  }
 }
