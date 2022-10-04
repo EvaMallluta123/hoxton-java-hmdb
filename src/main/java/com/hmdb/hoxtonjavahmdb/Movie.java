@@ -13,18 +13,28 @@ public class Movie {
      public Integer actorId;
      
      static {
-        new Movie(1, "Star", "Two people who loves the stars", 2010, 1);
-       new Movie(2, "Athena", "A killing film", 2012, 2);
-       new Movie(3, "Sister", "A movie about two sisters", 2022, 2);
+        new Movie(1, "Star", "Two people who loves the stars", 2010);
+       new Movie(2, "Athena", "A killing film", 2012);
+       new Movie(3, "Sister", "A movie about two sisters", 2022);
         }
-     public Movie(Integer id, String title, String description, Integer year, Integer actorId) {
+     public Movie(Integer id, String title, String description, Integer year) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.year = year;
-        this.actorId= actorId;
+        
         
         Movie.movies.add(this);
       }
+       public ArrayList<Actor> getActors(){
+        ArrayList<Actor> actors= new ArrayList<>();
+
+        for(Actor actor : Actor.actors){
+            if(actor.movieId==this.id){
+                actors.add(actor);
+            }
+        }
+        return actors;
+       }
       
 }
