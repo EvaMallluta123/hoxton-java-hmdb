@@ -21,8 +21,5 @@ public class Actor {
         
         Actor.actors.add(this);
       }
-      public void displayInfo() {
-        String message = "This is %s, who is %s year(s) old. %s %s cuddles!\n";
-        System.out.printf(message, this.first_name, this.last_name, this.year_of_birth);
-      }
+    
 }
